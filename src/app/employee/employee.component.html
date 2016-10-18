@@ -1,0 +1,22 @@
+<div>
+  <label for="id">id</label>
+<input name="id" type="text" [(ngModel)]="employee.id" />
+
+
+<label for="name">Name</label>
+<input name="name" type="text" [(ngModel)]="employee.name"/>
+
+
+
+<label for="mobile">Mobile</label>
+<input name="mobile" type="text" [(ngModel)]="employee.mobile"/>
+
+<button (click)="add()">Add</button>
+
+<h2>Employee Details</h2>
+Id: {{employee.id}}<br />
+Name: {{employee.name}} <br />
+Mobile: {{employee.mobile}} <br />
+</div>
+
+
