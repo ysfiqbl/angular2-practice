@@ -1,7 +1,7 @@
 # Angular 2 Practise Step By Step
 
 ##Overview
-This very simple application to demonstrate the capabilities of Angular 2. It is not a tutorial but rather a of a teaching tool to help me teach Angular 2 to newbies. I will basically create do an hands-on Angular 2 workshop for one a day and this repo will contain the code that was completed at the end of each day. So this repo is more of a reference for me and anyone that attended the session.
+This very simple application to demonstrate the capabilities of Angular 2. It is not a tutorial but rather a of a teaching tool to help me teach Angular 2 to newbies. I will basically do a hands-on Angular 2 workshop for one a day and this repo will contain the code that was completed at the end of each day. So this repo is more of a reference for me and anyone that attended the session.
 
 ##Prerequisites 
 - [Git](https://git-scm.com/downloads)
