@@ -56,3 +56,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+##Day 02
+- Demonstrated two-way and event bindings. 
+- Created a mock add forms (but does not use submit yet, just click event)
+- Demonstrated *ngFor.
+- Added bootstrap for styling.
