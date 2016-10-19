@@ -1,0 +1,7 @@
+New Employee: <input [(ngModel)]="employee.name" /> <br />
+<button (click)="add()">Add Employee</button>
+<ul>
+  <li *ngFor="let employee of employees;">
+    {{employee.name}} <button (click)="delete(employee)">Delete</button>
+  </li>
+</ul>
