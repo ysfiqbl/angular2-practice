@@ -1,0 +1,9 @@
+<h3>Example heading <span class="label label-default">New</span></h3>
+<label for="id">ID
+<input id="id" name="id" [(ngModel)]="distributor.id"/>
+<label for="name">Name
+<input id="name" name="name" [(ngModel)]="distributor.name"/>
+
+<button (click)="add($event)">Add</button>
+{{distributor.id}} <br />
+{{distributor.name}}
