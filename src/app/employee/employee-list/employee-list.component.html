@@ -1,7 +1,42 @@
-New Employee: <input [(ngModel)]="employee.name" /> <br />
-<button (click)="add()">Add Employee</button>
-<ul>
-  <li *ngFor="let employee of employees;">
-    {{employee.name}} <button (click)="delete(employee)">Delete</button>
-  </li>
-</ul>
+<div class="container">
+  <div class="page-header">
+    <h1>Manage Employees</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Add New Employee</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Employee Name</label>
+          <input id="name" type="text" name="name" class="form-control" [(ngModel)]="employee.name" placeholder="Employee Name"> 
+        </div>
+        <button class="btn btn-primary" (click)="add()">Add Employee</button>
+      </form>
+    </div>
+  
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Employees</h2>
+      <table class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let employee of employees">
+          <td>{{employee.id}} </td>
+          <td>{{employee.name}} </td>
+          <td>
+            <button type="button" class="btn btn-default" (click)="delete(employee)">
+            <span class="glyphicon glyphicon-trash"></span>
+          </button>
+          </td>
+        </tr>
+      </table>      
+    </div>
+  </div>
+</div>
