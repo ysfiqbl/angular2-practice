@@ -29,7 +29,7 @@ export class EmployeeListComponent implements OnInit {
    * newly created employee.
    */
   add() {
-    var employee = this.employee;
+    var employee = JSON.parse(JSON.stringify(this.employee));
     this._es.create(employee).then((obj) => {
       if (obj.id > 0) {
         employee.id = obj.id;
