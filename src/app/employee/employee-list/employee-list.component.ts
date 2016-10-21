@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../employee';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -10,29 +11,14 @@ export class EmployeeListComponent implements OnInit {
   employees: Employee[];
   employee: Employee;
 
-  constructor() { 
+  constructor(
+    private _es: EmployeeService
+  ) { 
     this.employee = new Employee();
   }
 
   ngOnInit() {
-    this.employees = [
-      {
-        id: 1,
-        name: 'Yusuf'
-      },
-      {
-        id: 2,
-        name: 'Hasith'
-      },
-      {
-        id: 3,
-        name: 'Nuwan'
-      },
-      {
-        id: 4,
-        name: 'Yeshan'
-      },
-    ]
+    this.getEmployees();
   }
 
   add() {
@@ -42,10 +28,29 @@ export class EmployeeListComponent implements OnInit {
   }
 
   delete(e: Employee) {
-    var temp = this.employees.filter((employee) => {
-      return employee.id != e.id;
+    this._es.delete(e.id).then((status) => {
+      if (status == 200) {
+        var index = this.getEmployeeIndex(e.id)
+	
+        if (index != -1) {
+          this.employees.splice(index,1);
+        }
+      } else {
+        console.log(status);
+      } 
     });
-    
-    this.employees = temp;
+  }
+
+  getEmployees() {
+    this._es.getEmployees().then((employees) => {
+      console.log(employees)
+      this.employees = employees;
+    });
+  }
+
+  getEmployeeIndex(id) {
+    return this.employees.findIndex((element) => {
+      return element.id == id;
+    });
   }
 }
