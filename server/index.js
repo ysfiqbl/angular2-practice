@@ -33,7 +33,7 @@ app.post('/api/employees', (req, res) => {
 	console.log(req.body);
 
 	var employee = req.body;
-	employee.id = employees[employees.length - 1].id + 1;
+	employee.id = ( employees.length > 0 ) ? employees[employees.length - 1].id + 1 : 1;
 	employees.push(employee);
 	
 	res.send({'id': employee.id});
