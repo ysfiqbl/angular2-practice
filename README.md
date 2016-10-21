@@ -61,3 +61,19 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 - Created a mock add forms (but does not use submit yet, just click event)
 - Demonstrated *ngFor.
 - Added bootstrap for styling.
+
+##Day 03
+- Created `EmployeeService` to communicate with HTTP server.
+- HTTP server is a simple `nodejs` server built using `express`.
+- Implemented `GET`, `POST` and `DELETE` in `EmployeeService`.
+
+###Server
+The server is a simple API to demonstrate the `EmployeeService`. 
+
+####Installation
+Navigate into the `server/` folder inside the project root folder and run `npm install` to install the prequistes. i.e. `express` and `body-parser`.
+
+####Running the Server
+Navigate to the `server/` folder in the project root and execute `node index.js`.
+
+NOTE: `ng serve` and `node index.js` needs to be run in separate terminals. 
