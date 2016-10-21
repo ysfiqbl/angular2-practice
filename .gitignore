@@ -24,6 +24,7 @@ npm-debug.log
 testem.log
 /typings
 .vscode/
+server/node_modules
 
 # e2e
 /e2e/*.js
