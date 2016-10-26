@@ -10,11 +10,17 @@ import { EmployeeService } from '../employee.service';
 export class EmployeeListComponent implements OnInit {
   employees: Employee[];
   employee: Employee;
+  showAdd: boolean;
+  showEdit: boolean;
+  showAddButton: boolean;
 
   constructor(
     private _es: EmployeeService
   ) { 
     this.employee = new Employee();
+    this.showAdd = false;
+    this.showEdit = false;
+    this.showAddButton = true;
   }
 
   ngOnInit() {
@@ -38,7 +44,28 @@ export class EmployeeListComponent implements OnInit {
         console.log('Server error');
       }
     });
+    this.showAdd = false;
   }
+
+  /**
+   * Use the update method of EmployeeService to update the selected employee.
+   * The array is being manipulated in 
+   * order to prevent a needless HTTP request to fetch the list with the
+   * newly created employee.
+   */
+  update () {
+    var employee = JSON.parse(JSON.stringify(this.employee));
+    this._es.update(employee).then((status) => {
+      if (status == 200) {
+        this.employee[this.index(employee.id)] == employee;
+        this.employee = new Employee();
+      }
+    });;
+    this.showEdit = false;
+    this.showAddButton = true;
+  }
+
+  
 
   /**
    * Use the delete method of EmployeeService to delete an employee and
@@ -81,5 +108,22 @@ export class EmployeeListComponent implements OnInit {
     return this.employees.findIndex((element) => {
       return element.id == id;
     });
+  }
+
+  /**
+   * Load employee to edit
+   */
+  load(employee: Employee): void {
+    this.employee = employee;
+    this.showAddButton = false;
+    this.showAdd = false;
+    this.showEdit = true;
+  }
+
+  /**
+   * Toggle 
+   */
+  toggleAdd() {
+    this.showAdd = !this.showAdd;
   }
 }
