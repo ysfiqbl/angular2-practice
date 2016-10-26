@@ -77,3 +77,10 @@ Navigate into the `server/` folder inside the project root folder and run `npm i
 Navigate to the `server/` folder in the project root and execute `node index.js`.
 
 NOTE: `ng serve` and `node index.js` needs to be run in separate terminals. 
+
+##Day 04
+- Created employee edit form.
+- Implemented `PUT` in `EmployeeService`.
+- Used `update` method of `EmployeeService` to update an employee.
+- Demonstrated `*ngIf`.
+- Used `*ngIf` to show/hide add/update form.
