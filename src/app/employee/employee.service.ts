@@ -35,6 +35,17 @@ export class EmployeeService {
   }
 
   /**
+   * Make HTTP PUR request to update the employee. Returns 200 OK if successful.
+   * 
+   * @param employee - employee object that needs to be created
+   */
+  update(employee: Employee): Promise<number> {
+    return this.http.put(`${this.url}${employee.id}`, employee).toPromise().then((response) => {
+      return response.status;
+    })
+  }
+
+  /**
    * Make HTTP DELETE request to delete the an employee with id
    * 
    * @param id - the id of the employee to be deleted
