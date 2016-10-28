@@ -84,3 +84,9 @@ NOTE: `ng serve` and `node index.js` needs to be run in separate terminals.
 - Used `update` method of `EmployeeService` to update an employee.
 - Demonstrated `*ngIf`.
 - Used `*ngIf` to show/hide add/update form.
+
+##Day 05
+- Installed bootstrap from npm using `npm install bootstrap --save`. 
+- Edited `angular-cli.json` to include bootstrap styles.
+- Created employee add, edit and detail components.
+- Added routing. 
