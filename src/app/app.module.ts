@@ -7,7 +7,12 @@ import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { DistributorComponent } from './distributor/distributor.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { EmployeeAddComponent } from './employee/employee-add/employee-add.component';
+import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
+import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
 import { EmployeeService } from './employee/employee.service';
+
+import { appRouting } from './app.routing';
 
 
 @NgModule({
@@ -15,12 +20,16 @@ import { EmployeeService } from './employee/employee.service';
     AppComponent,
     EmployeeComponent,
     DistributorComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EmployeeAddComponent,
+    EmployeeEditComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    appRouting
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
