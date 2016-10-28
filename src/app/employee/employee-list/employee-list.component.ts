@@ -27,25 +27,7 @@ export class EmployeeListComponent implements OnInit {
     this.all();
   }
 
-  /**
-   * Use the create method of EmployeeService to create a new employee
-   * and add the newly created employee to the employees array if the 
-   * employee was successfully created. The array is being manipulated in 
-   * order to prevent a needless HTTP request to fetch the list with the
-   * newly created employee.
-   */
-  add() {
-    var employee = JSON.parse(JSON.stringify(this.employee));
-    this._es.create(employee).then((obj) => {
-      if (obj.id > 0) {
-        employee.id = obj.id;
-        this.employees.push(employee);
-      } else {
-        console.log('Server error');
-      }
-    });
-    this.showAdd = false;
-  }
+  
 
   /**
    * Use the update method of EmployeeService to update the selected employee.

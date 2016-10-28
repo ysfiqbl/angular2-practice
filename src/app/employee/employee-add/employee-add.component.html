@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Add New Employee</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Employee Name</label>
+          <input id="name" type="text" name="name" class="form-control" [(ngModel)]="employee.name" placeholder="Employee Name"> 
+        </div>
+        <button type="button" class="btn btn-primary" (click)="add()">Add Employee</button>
+      </form>
+    </div>
+  </div>
+</div>
