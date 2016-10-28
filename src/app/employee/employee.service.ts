@@ -23,6 +23,15 @@ export class EmployeeService {
   }
 
   /**
+   * Make HTTP GET request to get a an employee with id @id. 
+   */
+  get(id: number): Promise<Employee> {
+    return this.http.get(`${this.url}${id}`).toPromise().then((response) => {
+      return response.json() as Employee;
+    });
+  }
+
+  /**
    * Make HTTP POST request to create a new employee. The response contains
    * the id of the newly created employee.
    * 
